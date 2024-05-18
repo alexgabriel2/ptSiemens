@@ -42,7 +42,7 @@ public class BookingService {
                         && bookingRequest.getCheckOut().equals(bookingRequest.getCheckIn()))
         );
 
-        if (isDateAvailable) {
+        if (isDateAvailable && room.isAvailable()) {
             var booking = Booking.builder()
                     .checkIn(bookingRequest.getCheckIn())
                     .checkOut(bookingRequest.getCheckOut())
