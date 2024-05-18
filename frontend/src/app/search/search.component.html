@@ -1,0 +1,32 @@
+
+
+<p><button (click)="getLocation()">Apasa pentru a afla location ta</button></p>
+<p>Sau poti pune orice locatie pe care o doresti</p>
+<form (ngSubmit)="search()">
+  <div>
+    <p>
+    <label>Latitudine</label>
+    </p>
+  <input type="number" [(ngModel)]="lat" name="Latitudine">
+  </div>
+  <p>
+    <label>Longitudine</label>
+  </p>
+  <input type="number" [(ngModel)]="lng" name="Longitudine">
+  <div>
+    <p>
+    <label>Distanta maxima in km</label>
+    </p>
+  <input type="number" [(ngModel)]="distance" name="distanta">
+  </div>
+  <button type="submit">Send Number</button>
+</form>
+<ng-container *ngIf="foundHotels">
+
+  @for (hotel of foundHotels; track hotel.id) {
+    <p>{{ hotel.name }} - la {{ hotel.distance }} metri de locatia precizata</p>
+    <p><a href="/hotel/{{hotel.id}}">View Rooms</a> </p>
+  } @empty {
+    No hotels found !
+  }
+</ng-container>

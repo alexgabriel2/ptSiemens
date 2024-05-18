@@ -1,0 +1,23 @@
+<ng-container *ngIf="response">
+  <div>
+    <h3>{{response}}</h3>
+  </div>
+  </ng-container>
+<ng-container *ngFor="let bookings of bookingResponse">
+    <div>
+      <div>
+        <div>
+          <h3>{{ bookings.bookingId }}</h3>
+          <button (click)="cancelBooking(bookings.bookingId)">Cancel</button>
+        </div>
+        <div>
+          <p>{{ bookings.checkIn }}</p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <p>{{ bookings.checkOut }}</p>
+        </div>
+      </div>
+    </div>
+</ng-container>

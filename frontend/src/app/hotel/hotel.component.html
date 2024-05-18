@@ -1,0 +1,8 @@
+<b>Camerele pentru {{hotel?.name}}</b>
+<a href="feedbacks/{{hotel?.id}}">Feedback</a>
+<div *ngFor="let room of rooms">
+  <p>Numarul camerei {{room?.roomNumber}} Tipul camerei {{room?.type}} Pretul {{room?.price}} Valabilitate {{room?.available}}
+  <a href="book/{{room.id}}">book</a></p>
+</div>
+
+

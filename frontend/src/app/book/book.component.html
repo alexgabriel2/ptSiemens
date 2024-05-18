@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit()">
+  <p>Room number {{roomId}}</p>
+  <label >Check In</label>
+  <br>
+  <input type="datetime-local" name="CheckIn" [(ngModel)]="checkIn">
+  <br>
+  <label >Check out</label>
+  <br>
+  <input type="datetime-local" name="CheckOut" [(ngModel)]="checkOut">
+  <br>
+  <button type="submit">Submit</button>
+  <ng-container *ngIf="result">
+    <p>{{result}}</p>
+    </ng-container>
+</form>
+<div *ngIf="bookingResponse?.length">
+  <p>Cant make a booking for this dates</p>
+</div>
+<div *ngFor="let book of bookingResponse">
+  <p>{{book.checkIn}}</p>
+  <p>{{book.checkOut}}</p>
+</div>

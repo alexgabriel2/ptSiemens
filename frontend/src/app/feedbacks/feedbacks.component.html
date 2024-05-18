@@ -1,0 +1,27 @@
+
+
+
+  <form (ngSubmit)="sendFeedback()">
+    <div>
+      <p>
+        <label>Numele tau</label>
+      </p>
+      <input type="text" [(ngModel)]="name" name="name">
+    </div>
+    <p>
+      <label>Feedback-ul</label>
+    </p>
+    <input type="text" [(ngModel)]="message" name="message">
+  <br>
+    <button type="submit">Send Feedback</button>
+  </form>
+<ng-container *ngIf="response">
+  <p>{{response}}</p>
+</ng-container>
+  <ng-container *ngIf="feedbacks">
+    <div *ngFor="let feedback of feedbacks">
+      <p>Utilizatorul {{feedback.name}}</p>
+      <p>A spus</p>
+      <p>{{feedback.message}}</p>
+    </div>
+  </ng-container>

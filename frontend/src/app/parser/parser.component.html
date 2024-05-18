@@ -1,0 +1,16 @@
+<p>Salut</p>
+<p>Aici selectezi json-ul pe care doresti sa il adaugi in baza de date</p>
+<p>Atentie! Aceasta actiune sterge toate valorile adaugate inainte</p>
+<select [(ngModel)]="selectedFile">
+  <option *ngFor="let fileName of fileNames" [value]="fileName">
+    {{ fileName }}
+  </option>
+</select>
+<button (click)="onSend()">Send File</button>
+<p>Adauga un json</p>
+<p>
+<input type="file" accept=".json" (change)="onFileChange($event)">
+</p>
+<p>
+<button (click)="upload()">Upload</button>
+</p>
